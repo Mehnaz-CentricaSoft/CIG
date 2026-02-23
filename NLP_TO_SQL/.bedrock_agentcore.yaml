@@ -1,0 +1,122 @@
+default_agent: CIG_planner_agent
+agents:
+  my_strands_agent:
+    name: my_strands_agent
+    language: python
+    node_version: '20'
+    entrypoint: main.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: docker
+    source_path: C:\Users\DELL\Downloads\demo_cig
+    aws:
+      execution_role: null
+      execution_role_auto_create: true
+      account: '193577458970'
+      region: us-east-1
+      ecr_repository: ''''
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: null
+      agent_arn: null
+      agent_session_id: null
+    codebuild:
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    memory:
+      mode: NO_MEMORY
+      memory_id: null
+      memory_arn: null
+      memory_name: null
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
+  CIG_planner_agent:
+    name: CIG_planner_agent
+    language: python
+    node_version: '20'
+    entrypoint: main.py
+    deployment_type: container
+    runtime_type: null
+    platform: linux/arm64
+    container_runtime: docker
+    source_path: C:\Users\DELL\Downloads\demo_cig
+    aws:
+      execution_role: arn:aws:iam::193577458970:role/AmazonBedrockAgentCoreSDKRuntime-us-east-1-1448b044e2
+      execution_role_auto_create: false
+      account: '193577458970'
+      region: us-east-1
+      ecr_repository: 193577458970.dkr.ecr.us-east-1.amazonaws.com/bedrock-agentcore-cig_planner_agent
+      ecr_auto_create: false
+      s3_path: null
+      s3_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+        network_mode_config: null
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+      lifecycle_configuration:
+        idle_runtime_session_timeout: null
+        max_lifetime: null
+    bedrock_agentcore:
+      agent_id: CIG_planner_agent-OBp2pcE4fx
+      agent_arn: arn:aws:bedrock-agentcore:us-east-1:193577458970:runtime/CIG_planner_agent-OBp2pcE4fx
+      agent_session_id: f0305b79-7ffe-4f38-8c23-db3d6c897f00
+    codebuild:
+      project_name: bedrock-agentcore-cig_planner_agent-builder
+      execution_role: arn:aws:iam::193577458970:role/AmazonBedrockAgentCoreSDKCodeBuild-us-east-1-1448b044e2
+      source_bucket: bedrock-agentcore-codebuild-sources-193577458970-us-east-1
+    memory:
+      mode: NO_MEMORY
+      memory_id: null
+      memory_arn: null
+      memory_name: null
+      event_expiry_days: 30
+      first_invoke_memory_check_done: false
+      was_created_by_toolkit: false
+    identity:
+      credential_providers: []
+      workload: null
+    aws_jwt:
+      enabled: false
+      audiences: []
+      signing_algorithm: ES384
+      issuer_url: null
+      duration_seconds: 300
+    authorizer_configuration: null
+    request_header_configuration: null
+    oauth_configuration: null
+    api_key_env_var_name: null
+    api_key_credential_provider_name: null
+    is_generated_by_agentcore_create: false
